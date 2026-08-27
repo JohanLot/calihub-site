@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CareGiver | CaliHub</title>
+<meta name="description" content="Privacy policy for the CareGiver app by CaliHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F8EF;
+    --rule:#C6D8BC;
+    --rule-soft:#DCE8D3;
+    --ink:#1E2A22;
+    --ink-soft:#4B5A4E;
+    --margin-red:#9B3B3B;
+    --margin-red-soft:#C48A8A;
+    --brass:#8A6C33;
+    --flag-bg:#FBF0DD;
+    --flag-border:#C79A4B;
+  }
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image: repeating-linear-gradient(
+      to bottom, transparent 0px, transparent 34px, var(--rule-soft) 34px, var(--rule-soft) 35px
+    );
+    color:var(--ink);
+    font-family:"Newsreader", Georgia, serif;
+    font-size:18px;
+    line-height:35px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{ font-family:"IBM Plex Mono", monospace; letter-spacing:0.02em; }
+
+  .sheet{
+    max-width:780px;
+    margin:0 auto;
+    position:relative;
+    padding:0 28px 70px 84px;
+  }
+  .margin-rule{
+    position:absolute; top:0; bottom:0; left:56px; width:1px;
+    background:var(--margin-red-soft);
+  }
+
+  header{ padding-top:56px; }
+  .ledger-no{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--brass);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  nav{
+    display:flex;
+    gap:24px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-top:18px;
+    padding-bottom:20px;
+    flex-wrap:wrap;
+  }
+  nav a{ color:var(--ink-soft); text-decoration:none; border-bottom:1px solid transparent; }
+  nav a:hover, nav a:focus-visible{ color:var(--margin-red); border-bottom:1px solid var(--margin-red); }
+
+  h1{ font-size:36px; font-weight:600; margin:16px 0 6px 0; letter-spacing:-0.01em;}
+  .draft-badge{
+    font-family:"IBM Plex Mono", monospace;
+    display:inline-block;
+    font-size:13px;
+    color:#8A5A1F;
+    border:1px solid var(--flag-border);
+    background:var(--flag-bg);
+    border-radius:999px;
+    padding:5px 14px;
+    margin-bottom:22px;
+  }
+  .lede{ font-size:19px; max-width:620px; color:var(--ink); }
+
+  .flag{
+    background:var(--flag-bg);
+    border:1px solid var(--flag-border);
+    padding:18px 20px;
+    margin:26px 0 10px 0;
+    max-width:620px;
+    font-size:16px;
+    line-height:27px;
+  }
+  .flag strong{ color:var(--margin-red); }
+
+  nav.toc{
+    margin:30px 0 40px 0;
+    border:1px solid var(--rule);
+    background:rgba(255,255,255,0.4);
+    padding:18px 22px 6px 22px;
+    max-width:640px;
+    display:block;
+  }
+  nav.toc p.label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 10px 0;
+  }
+  nav.toc ol{
+    margin:0 0 12px 0;
+    padding:0;
+    list-style:none;
+    columns:2;
+    column-gap:28px;
+  }
+  nav.toc li{ break-inside:avoid; margin-bottom:6px; line-height:1.4; font-size:15px; }
+  nav.toc a{ color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; font-family:"Newsreader", Georgia, serif; letter-spacing:0; text-transform:none; }
+  nav.toc a:hover, nav.toc a:focus-visible{ border-bottom-color:var(--margin-red); color:var(--margin-red); }
+
+  section{ padding:26px 0 6px 0; scroll-margin-top:20px; }
+  h2{
+    font-size:23px; font-weight:600; margin:0 0 8px 0;
+    display:flex; align-items:baseline; gap:10px;
+  }
+  h2 .num{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px; font-weight:600; color:var(--brass);
+    border:1px solid var(--rule); border-radius:4px; padding:2px 7px;
+  }
+  section p{ margin:0 0 16px 0; max-width:640px; font-size:17px; line-height:32px; }
+  section ul{ margin:0 0 16px 0; padding-left:22px; max-width:620px; }
+  section li{ margin-bottom:8px; font-size:17px; line-height:30px; }
+  section li::marker{ color:var(--margin-red); }
+  strong{ font-weight:600; }
+  a{ color:var(--margin-red); }
+  .todo{ background:rgba(199,154,75,0.18); padding:1px 5px; border-radius:3px; }
+
+  footer{
+    margin-top:44px;
+    padding-top:22px;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  footer a{ text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:640px){
+    .sheet{ padding:0 20px 60px 52px; }
+    .margin-rule{ left:32px; }
+    h1{ font-size:28px; }
+    nav.toc ol{ columns:1; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<div class="margin-rule" aria-hidden="true"></div>
+<div class="sheet">
+
+  <header>
+    <div class="ledger-no">CaliHub — Development Ledger</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="houseledger.html">HouseLedger</a>
+      <a href="caregiver.html">CareGiver</a>
+      <a href="privacy.html">Company Privacy</a>
+      <a href="mailto:support@calihub.org">Contact</a>
+    </nav>
+    <h1>CareGiver Privacy Policy</h1>
+    <div><span class="draft-badge">Draft — not yet final</span></div>
+    <p class="lede">CareGiver is a shared activity feed that helps families coordinate care for an aging parent. This page explains what information the app collects and how it's used.</p>
+  </header>
+
+  <div class="flag">
+    <strong>This is a placeholder, not the final policy.</strong> The sections below reflect what CareGiver actually does based on its feature set, but a few technical details are marked <span class="todo">like this</span> because they depend on how the app is built (storage provider, exact retention behavior, etc.) — fill those in, or send them to me, before this goes live or gets submitted to Google Play.
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p class="label">On this page</p>
+    <ol>
+      <li><a href="#collect">1. Information we collect</a></li>
+      <li><a href="#use">2. How we use it</a></li>
+      <li><a href="#circle">3. Visibility within your circle</a></li>
+      <li><a href="#storage">4. Where it's stored</a></li>
+      <li><a href="#sharing">5. Sharing with others</a></li>
+      <li><a href="#choices">6. Your choices &amp; deletion</a></li>
+      <li><a href="#children">7. Children's privacy</a></li>
+      <li><a href="#changes">8. Changes to this policy</a></li>
+      <li><a href="#contact">9. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="collect">
+    <h2><span class="num mono">1</span> Information we collect</h2>
+    <ul>
+      <li><strong>Account information</strong> — your email address, used to sign you in and identify you within a family circle.</li>
+      <li><strong>Content you log</strong> — caregiving actions you record (calls, doctor visits, groceries, bills paid), coverage requests, and appreciation "hearts" you send.</li>
+      <li><strong>Circle membership</strong> — which family circle(s) you belong to, and who else is in them.</li>
+      <li><span class="todo">[Confirm: any device/technical data collected, e.g. push notification tokens for digest/coverage-request alerts?]</span></li>
+    </ul>
+  </section>
+
+  <section id="use">
+    <h2><span class="num mono">2</span> How we use it</h2>
+    <ul>
+      <li>To show your circle a shared feed of caregiving activity.</li>
+      <li>To generate the weekly digest recap.</li>
+      <li>To deliver coverage requests and appreciation hearts to the right circle members.</li>
+      <li>To keep your account secure and restore your session when you reopen the app.</li>
+    </ul>
+    <p>We do not use your content to train models, and we do not use it for advertising.</p>
+  </section>
+
+  <section id="circle">
+    <h2><span class="num mono">3</span> Visibility within your circle</h2>
+    <p>CareGiver is built around shared visibility, so it's worth being explicit about who sees what: anything you log — an action, a coverage request, a heart — is visible to every member of the same family circle. It is not private between you and the app; it is private to your circle only, not to the public or to other CareGiver users outside it.</p>
+  </section>
+
+  <section id="storage">
+    <h2><span class="num mono">4</span> Where it's stored</h2>
+    <p><span class="todo">[Confirm storage provider — e.g. Supabase, as used for HouseLedger, or a different backend]</span>. Structured data (circles, logged actions, coverage requests) is stored in a database; <span class="todo">[confirm if CareGiver stores photos/attachments — HouseLedger does, unclear if CareGiver does]</span>. All traffic between the app and storage is encrypted in transit (HTTPS/TLS).</p>
+    <p>Data is scoped so that only members of a given circle can access that circle's activity.</p>
+  </section>
+
+  <section id="sharing">
+    <h2><span class="num mono">5</span> Sharing with others</h2>
+    <p>We don't sell your personal information, and we don't share it with advertisers. <span class="todo">[Confirm the only outside party involved — likely just the storage/hosting provider, as with HouseLedger]</span>, acting solely as a hosting provider and not using your data for its own purposes.</p>
+  </section>
+
+  <section id="choices">
+    <h2><span class="num mono">6</span> Your choices &amp; deletion</h2>
+    <ul>
+      <li><strong>Leave a circle</strong> — <span class="todo">[confirm: does leaving remove your logged history from the shared feed, or does it stay visible to the circle?]</span></li>
+      <li><strong>Delete a logged action</strong> — <span class="todo">[confirm whether users can delete individual entries after logging them]</span></li>
+      <li><strong>Delete your account</strong> — <span class="todo">[confirm: permanently deletes your account and removes/anonymizes your history — describe actual behavior]</span></li>
+    </ul>
+  </section>
+
+  <section id="children">
+    <h2><span class="num mono">7</span> Children's privacy</h2>
+    <p>CareGiver is intended for adult family members coordinating care for a parent, and is not directed at children. We do not knowingly collect information from anyone under 13.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num mono">8</span> Changes to this policy</h2>
+    <p>If this policy changes, we'll update this page. Continued use of the app after a change means you accept the updated policy.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num mono">9</span> Contact</h2>
+    <p>Questions about this policy or your data can be sent to <a class="mono" href="mailto:support@calihub.org">support@calihub.org</a>.</p>
+  </section>
+
+  <footer>
+    <a href="caregiver.html">&larr; Back to CareGiver</a>
+    <a href="index.html">CaliHub Home</a>
+  </footer>
+
+</div>
+</body>
+</html>
