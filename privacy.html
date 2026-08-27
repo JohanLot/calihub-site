@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — HouseLedger | CaliHub</title>
+<meta name="description" content="Privacy policy for the HouseLedger app by CaliHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F8EF;
+    --rule:#C6D8BC;
+    --rule-soft:#DCE8D3;
+    --ink:#1E2A22;
+    --ink-soft:#4B5A4E;
+    --margin-red:#9B3B3B;
+    --margin-red-soft:#C48A8A;
+    --brass:#8A6C33;
+    --stamp-ink:#2F5233;
+  }
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image: repeating-linear-gradient(
+      to bottom, transparent 0px, transparent 34px, var(--rule-soft) 34px, var(--rule-soft) 35px
+    );
+    color:var(--ink);
+    font-family:"Newsreader", Georgia, serif;
+    font-size:18px;
+    line-height:35px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{ font-family:"IBM Plex Mono", monospace; letter-spacing:0.02em; }
+
+  .sheet{
+    max-width:780px;
+    margin:0 auto;
+    position:relative;
+    padding:0 28px 70px 84px;
+  }
+  .margin-rule{
+    position:absolute; top:0; bottom:0; left:56px; width:1px;
+    background:var(--margin-red-soft);
+  }
+
+  header{ padding-top:56px; }
+  .ledger-no{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--brass);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  a.back{
+    color:var(--margin-red);
+    text-decoration:none;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    letter-spacing:0.05em;
+  }
+  a.back:hover{ text-decoration:underline; }
+
+  h1{ font-size:36px; font-weight:600; margin:16px 0 6px 0; letter-spacing:-0.01em;}
+  .effective-date{
+    font-family:"IBM Plex Mono", monospace;
+    display:inline-block;
+    font-size:13px;
+    color:var(--ink-soft);
+    border:1px solid var(--rule);
+    background:rgba(255,255,255,0.5);
+    border-radius:999px;
+    padding:5px 14px;
+    margin-bottom:22px;
+  }
+  .lede{
+    font-size:19px;
+    max-width:620px;
+    color:var(--ink);
+  }
+
+  nav.toc{
+    margin:34px 0 40px 0;
+    border:1px solid var(--rule);
+    background:rgba(255,255,255,0.4);
+    padding:18px 22px 6px 22px;
+    max-width:640px;
+  }
+  nav.toc p.label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 10px 0;
+  }
+  nav.toc ol{
+    margin:0 0 12px 0;
+    padding:0;
+    list-style:none;
+    columns:2;
+    column-gap:28px;
+  }
+  nav.toc li{ break-inside:avoid; margin-bottom:6px; line-height:1.4; font-size:15px; }
+  nav.toc a{ color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; }
+  nav.toc a:hover, nav.toc a:focus-visible{ border-bottom-color:var(--margin-red); color:var(--margin-red); }
+
+  section{ padding:26px 0 6px 0; scroll-margin-top:20px; }
+  h2{
+    font-size:23px;
+    font-weight:600;
+    margin:0 0 8px 0;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  h2 .num{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    font-weight:600;
+    color:var(--brass);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:2px 7px;
+  }
+  section p{ margin:0 0 16px 0; max-width:640px; font-size:17px; line-height:32px; }
+  section ul{ margin:0 0 16px 0; padding-left:22px; max-width:620px; }
+  section li{ margin-bottom:8px; font-size:17px; line-height:30px; }
+  section li::marker{ color:var(--margin-red); }
+  strong{ font-weight:600; }
+
+  .callout{
+    background:rgba(155,59,59,0.06);
+    border-left:3px solid var(--margin-red);
+    padding:14px 18px;
+    max-width:610px;
+    font-size:16px;
+    line-height:28px;
+  }
+  .callout p{ margin:0; }
+
+  a{ color:var(--margin-red); }
+
+  footer{
+    margin-top:44px;
+    padding-top:22px;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  footer a{ text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:640px){
+    .sheet{ padding:0 20px 60px 52px; }
+    .margin-rule{ left:32px; }
+    h1{ font-size:28px; }
+    nav.toc ol{ columns:1; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<div class="margin-rule" aria-hidden="true"></div>
+<div class="sheet">
+
+  <header>
+    <div class="ledger-no">CaliHub — Development Ledger</div>
+    <a class="back" href="index.html">&larr; Back to CaliHub</a>
+    <h1>HouseLedger Privacy Policy</h1>
+    <div><span class="effective-date">Effective August 24, 2026</span></div>
+    <p class="lede">HouseLedger helps homeowners and builders keep a permanent, room-by-room record of a house — photos, notes, documents, contractors, and maintenance reminders. This page explains, in plain terms, what information the app collects, how it's used, and how you can see or remove it at any time.</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p class="label">On this page</p>
+    <ol>
+      <li><a href="#collect">1. Information we collect</a></li>
+      <li><a href="#use">2. How we use it</a></li>
+      <li><a href="#storage">3. Where it's stored</a></li>
+      <li><a href="#sharing">4. Sharing with others</a></li>
+      <li><a href="#choices">5. Your choices &amp; deletion</a></li>
+      <li><a href="#retention">6. Retention</a></li>
+      <li><a href="#security">7. Security</a></li>
+      <li><a href="#children">8. Children's privacy</a></li>
+      <li><a href="#changes">9. Changes to this policy</a></li>
+      <li><a href="#contact">10. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="collect">
+    <h2><span class="num mono">1</span> Information we collect</h2>
+    <p>The app collects only what it needs to keep your home record:</p>
+    <ul>
+      <li><strong>Account information</strong> — your email address, used to sign you in and identify your account.</li>
+      <li><strong>Content you create</strong> — the houses, rooms, and systems you set up, and everything you log against them: photos, notes, documents (permits, warranties, manuals, invoices), contractor details, and maintenance reminders.</li>
+      <li><strong>Basic technical data</strong> — standard session information needed to keep you securely signed in.</li>
+    </ul>
+    <div class="callout"><p>We do not use third-party analytics or advertising SDKs. Nothing you log is used to build an advertising profile.</p></div>
+  </section>
+
+  <section id="use">
+    <h2><span class="num mono">2</span> How we use it</h2>
+    <p>Your information is used strictly to run the app for you:</p>
+    <ul>
+      <li>To store and display your home's room-by-room history back to you.</li>
+      <li>To let you export a copy of a house's record, or a transfer file for a new owner.</li>
+      <li>To keep your account secure and restore your session when you reopen the app.</li>
+    </ul>
+    <p>We do not use your content to train models, and we do not sell it.</p>
+  </section>
+
+  <section id="storage">
+    <h2><span class="num mono">3</span> Where it's stored</h2>
+    <p>Your data is stored using <a href="https://supabase.com" target="_blank" rel="noreferrer">Supabase</a>, a hosted database and file storage provider. Structured data (houses, rooms, contractors, reminders) lives in a Postgres database; photos and documents live in Supabase's file storage. All traffic between the app and this storage is encrypted in transit (HTTPS/TLS).</p>
+    <p>Every row and file is scoped to your account by database-level access rules — your data is not visible to other users of the app.</p>
+  </section>
+
+  <section id="sharing">
+    <h2><span class="num mono">4</span> Sharing with others</h2>
+    <p>We don't sell your personal information, and we don't share it with advertisers. The only outside party involved is Supabase, acting solely as our hosting and storage provider — it doesn't use your data for its own purposes.</p>
+  </section>
+
+  <section id="choices">
+    <h2><span class="num mono">5</span> Your choices &amp; deletion</h2>
+    <p>You're in control of your data at every level, directly in the app:</p>
+    <ul>
+      <li><strong>Export</strong> — from Settings, export a full record of any house, or a transfer file to hand off to a new owner, at any time.</li>
+      <li><strong>Delete a house</strong> — permanently removes that house and everything logged under it, including uploaded files.</li>
+      <li><strong>Delete your account</strong> — permanently deletes your account and every house you've created, with no need to contact anyone. This takes effect immediately and cannot be undone.</li>
+    </ul>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num mono">6</span> Retention</h2>
+    <p>We keep your information for as long as your account exists. Deleting a house, or your account, removes the associated data immediately — including uploaded photos and documents — rather than placing it in a pending queue.</p>
+  </section>
+
+  <section id="security">
+    <h2><span class="num mono">7</span> Security</h2>
+    <p>Connections between the app and our storage provider are encrypted in transit. Access to your data is enforced at the database level, so a request can only ever read or change data belonging to the signed-in account making it.</p>
+  </section>
+
+  <section id="children">
+    <h2><span class="num mono">8</span> Children's privacy</h2>
+    <p>HouseLedger is intended for homeowners and builders, and is not directed at children. We do not knowingly collect information from anyone under 13.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num mono">9</span> Changes to this policy</h2>
+    <p>If this policy changes, we'll update the effective date at the top of this page. Continued use of the app after a change means you accept the updated policy.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num mono">10</span> Contact</h2>
+    <p>Questions about this policy or your data can be sent to <a class="mono" href="mailto:support@calihub.org">support@calihub.org</a>.</p>
+  </section>
+
+  <footer>
+    <a href="index.html">&larr; Back to CaliHub</a>
+    <a href="#collect">Back to top &uarr;</a>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,382 +1,362 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HouseLedger Privacy Policy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CaliHub — Independent App Studio</title>
+<meta name="description" content="CaliHub is an independent app studio building small, focused tools for everyday life. First entry: HomeLedger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #F6F2EA;
-    --surface: #FFFFFF;
-    --border: #E4DDCF;
-    --ink: #26221B;
-    --muted: #8A8172;
-    --accent: #1F6F63;
-    --accent-soft: #DCEAE6;
-    --clay: #C1622D;
-    --clay-soft: #F3E1D4;
+  :root{
+    --paper:#F4F8EF;
+    --paper-alt:#EBF2E3;
+    --rule:#C6D8BC;
+    --rule-soft:#DCE8D3;
+    --ink:#1E2A22;
+    --ink-soft:#4B5A4E;
+    --margin-red:#9B3B3B;
+    --margin-red-soft:#C48A8A;
+    --brass:#8A6C33;
+    --stamp-ink:#2F5233;
+    --stamp-planned:#7A5230;
+    --paper-shadow: 0 1px 0 rgba(30,42,34,0.05);
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1B1812;
-      --surface: #241F17;
-      --border: #3A3428;
-      --ink: #F1EBDD;
-      --muted: #A79C88;
-      --accent: #4FA694;
-      --accent-soft: #1D332E;
-      --clay: #E08A52;
-      --clay-soft: #3A2A1C;
-    }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 34px,
+      var(--rule-soft) 34px,
+      var(--rule-soft) 35px
+    );
+    color:var(--ink);
+    font-family:"Newsreader", Georgia, serif;
+    font-size:18px;
+    line-height:35px;
+    -webkit-font-smoothing:antialiased;
   }
 
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Work Sans', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
+  .mono{
+    font-family:"IBM Plex Mono", monospace;
+    letter-spacing:0.02em;
   }
 
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem 6rem;
+  .sheet{
+    max-width:840px;
+    margin:0 auto;
+    position:relative;
+    padding:0 28px 0 84px;
   }
 
-  header.masthead {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 3rem;
+  .margin-rule{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:56px;
+    width:1px;
+    background:var(--margin-red-soft);
+  }
+  .margin-rule::before{
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:6px;
+    width:1px;
+    background:var(--margin-red-soft);
+    opacity:0.5;
   }
 
-  .mark {
-    flex: none;
-    width: 40px;
-    height: 40px;
+  header.masthead{
+    padding-top:70px;
+    padding-bottom:0px;
   }
 
-  .wordmark {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-    color: var(--muted);
+  .ledger-no{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--brass);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:6px;
   }
 
-  h1 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-size: clamp(2.1rem, 5vw, 2.9rem);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.6rem;
-    text-wrap: balance;
+  .brand{
+    font-size:44px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0 0 2px 0;
+    color:var(--ink);
+  }
+  .brand span{
+    color:var(--margin-red);
+    font-style:italic;
+    font-weight:500;
   }
 
-  .effective-date {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.35rem 0.8rem;
-    font-variant-numeric: tabular-nums;
+  .tagline{
+    font-size:19px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-top:0;
   }
 
-  .lede {
-    font-size: 1.05rem;
-    color: var(--ink);
-    max-width: 62ch;
-    margin: 1.5rem 0 0;
+  nav{
+    display:flex;
+    gap:24px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-top:18px;
+    padding-bottom:16px;
+  }
+  nav a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  nav a:hover, nav a:focus-visible{
+    color:var(--margin-red);
+    border-bottom:1px solid var(--margin-red);
   }
 
-  nav.toc {
-    margin: 2.75rem 0 3.5rem;
-    padding: 1.25rem 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
+  section{
+    padding:32px 0 4px 0;
   }
 
-  nav.toc p {
-    margin: 0 0 0.7rem;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
+  .entry-label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:2px;
   }
 
-  nav.toc ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    columns: 2;
-    column-gap: 2rem;
+  h2{
+    font-size:26px;
+    font-weight:600;
+    margin:0 0 6px 0;
   }
 
-  nav.toc li {
-    break-inside: avoid;
-    margin-bottom: 0.5rem;
+  p{
+    margin:0 0 0 0;
+    max-width:620px;
   }
 
-  nav.toc a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.94rem;
-    border-bottom: 1px solid transparent;
+  .hero-line{
+    font-size:23px;
+    line-height:35px;
+    margin-bottom:0;
   }
 
-  nav.toc a:hover,
-  nav.toc a:focus-visible {
-    border-bottom-color: var(--accent);
+  .cta-row{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    margin-top:34px;
+    flex-wrap:wrap;
   }
 
-  section {
-    margin-bottom: 2.75rem;
-    scroll-margin-top: 1.5rem;
+  .btn{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:11px 20px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    display:inline-block;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover, .btn:focus-visible{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn.primary{
+    border-color:var(--margin-red);
+    color:var(--margin-red);
+  }
+  .btn.primary:hover, .btn.primary:focus-visible{
+    background:var(--margin-red);
+    color:var(--paper);
+    border-color:var(--margin-red);
   }
 
-  h2 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    letter-spacing: -0.005em;
-    margin: 0 0 0.9rem;
-    text-wrap: balance;
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
+  /* Ledger table */
+  .ledger-table{
+    margin-top:14px;
+    border-top:1px solid var(--rule);
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns: 84px 1fr 108px;
+    gap:18px;
+    align-items:start;
+    padding:24px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .ledger-row .cell-date{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    padding-top:5px;
+  }
+  .ledger-row .cell-main .app-name{
+    font-size:20px;
+    font-weight:600;
+    margin:0 0 4px 0;
+  }
+  .ledger-row .cell-main p{
+    font-size:16px;
+    line-height:26px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .stamp{
+    font-family:"Special Elite", monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:7px 6px;
+    border:2px solid var(--stamp-ink);
+    color:var(--stamp-ink);
+    transform:rotate(-4deg);
+    border-radius:3px;
+    opacity:0.9;
+  }
+  .stamp.planned{
+    border-color:var(--stamp-planned);
+    color:var(--stamp-planned);
+    transform:rotate(3deg);
   }
 
-  h2 .num {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border-radius: 6px;
-    padding: 0.15rem 0.5rem;
-    font-variant-numeric: tabular-nums;
+  .about-text{
+    max-width:640px;
+    color:var(--ink);
+  }
+  .about-text p + p{
+    margin-top:22px;
   }
 
-  section p {
-    margin: 0 0 1rem;
-    max-width: 66ch;
+  footer{
+    margin-top:50px;
+    padding:28px 0 60px 0;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  footer a{
+    color:var(--margin-red);
+    text-decoration:none;
+  }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:640px){
+    .sheet{ padding:0 20px 0 52px; }
+    .margin-rule{ left:32px; }
+    .margin-rule::before{ display:none; }
+    .brand{ font-size:34px; }
+    .hero-line{ font-size:20px; line-height:32px;}
+    nav{ gap:16px; flex-wrap:wrap; }
+    .ledger-row{ grid-template-columns: 1fr; gap:8px; }
+    .stamp{ justify-self:start; width:max-content; }
   }
 
-  section ul {
-    margin: 0 0 1rem;
-    padding-left: 1.25rem;
-    max-width: 62ch;
-  }
-
-  section li {
-    margin-bottom: 0.5rem;
-  }
-
-  section li::marker {
-    color: var(--clay);
-  }
-
-  strong { font-weight: 600; }
-
-  .callout {
-    background: var(--clay-soft);
-    border-left: 3px solid var(--clay);
-    border-radius: 0 10px 10px 0;
-    padding: 1rem 1.25rem;
-    max-width: 62ch;
-  }
-
-  .callout p:last-child { margin-bottom: 0; }
-
-  a { color: var(--accent); }
-
-  footer {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
-    color: var(--muted);
-    font-size: 0.88rem;
-  }
-
-  footer a {
-    color: var(--muted);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-
-  @media (max-width: 520px) {
-    nav.toc ol { columns: 1; }
-    footer { flex-direction: column; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
   }
 </style>
 </head>
 <body>
-<div class="page">
+
+<div class="margin-rule" aria-hidden="true"></div>
+<div class="sheet">
+
   <header class="masthead">
-    <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M6 19L20 7L34 19" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M10 16.5V32C10 32.5523 10.4477 33 11 33H29C29.5523 33 30 32.5523 30 32V16.5" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 33V24C17 23.4477 17.4477 23 18 23H22C22.5523 23 23 23.4477 23 24V33" stroke="var(--clay)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span class="wordmark">HOUSELEDGER</span>
+    <div class="ledger-no">
+      <span>CaliHub — Development Ledger</span>
+      <span>No. 001 · Opened 2026</span>
+    </div>
+    <h1 class="brand">Cali<span>Hub</span></h1>
+    <p class="tagline">An independent studio building small, useful apps.</p>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
   </header>
 
-  <h1>Privacy Policy</h1>
-  <span class="effective-date">Effective August 24, 2026</span>
-  <p class="lede">
-    HouseLedger helps homeowners and builders keep a permanent, room-by-room
-    record of a house &mdash; photos, notes, documents, contractors, and
-    maintenance reminders. This page explains, in plain terms, what
-    information the app collects, how it's used, and how you can see or
-    remove it at any time.
-  </p>
-
-  <nav class="toc" aria-label="Table of contents">
-    <p>On this page</p>
-    <ol>
-      <li><a href="#collect">1. Information we collect</a></li>
-      <li><a href="#use">2. How we use it</a></li>
-      <li><a href="#storage">3. Where it's stored</a></li>
-      <li><a href="#sharing">4. Sharing with others</a></li>
-      <li><a href="#choices">5. Your choices &amp; deletion</a></li>
-      <li><a href="#retention">6. Retention</a></li>
-      <li><a href="#security">7. Security</a></li>
-      <li><a href="#children">8. Children's privacy</a></li>
-      <li><a href="#changes">9. Changes to this policy</a></li>
-      <li><a href="#contact">10. Contact</a></li>
-    </ol>
-  </nav>
-
-  <section id="collect">
-    <h2><span class="num">1</span> Information we collect</h2>
-    <p>The app collects only what it needs to keep your home record:</p>
-    <ul>
-      <li><strong>Account information</strong> &mdash; your email address, used to sign you in and identify your account.</li>
-      <li><strong>Content you create</strong> &mdash; the houses, rooms, and systems you set up, and everything you log against them: photos, notes, documents (permits, warranties, manuals, invoices), contractor details, and maintenance reminders.</li>
-      <li><strong>Basic technical data</strong> &mdash; standard session information needed to keep you securely signed in.</li>
-    </ul>
-    <div class="callout">
-      <p>We do not use third-party analytics or advertising SDKs. Nothing you log is used to build an advertising profile.</p>
+  <section id="hero">
+    <p class="hero-line">We keep a running ledger of the apps we're building — one entry at a time, each one solving a real, specific problem instead of trying to do everything.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:support@calihub.org">Contact us</a>
+      <a class="btn" href="#apps">See what's in progress</a>
     </div>
   </section>
 
-  <section id="use">
-    <h2><span class="num">2</span> How we use it</h2>
-    <p>Your information is used strictly to run the app for you:</p>
-    <ul>
-      <li>To store and display your home's room-by-room history back to you.</li>
-      <li>To let you export a copy of a house's record, or a transfer file for a new owner.</li>
-      <li>To keep your account secure and restore your session when you reopen the app.</li>
-    </ul>
-    <p>We do not use your content to train models, and we do not sell it.</p>
+  <section id="apps">
+    <div class="entry-label">Current entries</div>
+    <h2>Apps</h2>
+    <div class="ledger-table">
+
+      <div class="ledger-row">
+        <div class="cell-date mono">2026</div>
+        <div class="cell-main">
+          <p class="app-name">HouseLedger</p>
+          <p>A permanent, room-by-room record of a house — photos, notes, documents, contractors, and maintenance reminders, all in one place. Coming soon to Google Play.</p>
+        </div>
+        <div class="stamp">In development</div>
+      </div>
+
+      <div class="ledger-row">
+        <div class="cell-date mono">—</div>
+        <div class="cell-main">
+          <p class="app-name">Next entry</p>
+          <p>We add a new line here once the next app is worth talking about.</p>
+        </div>
+        <div class="stamp planned">Planned</div>
+      </div>
+
+    </div>
   </section>
 
-  <section id="storage">
-    <h2><span class="num">3</span> Where it's stored</h2>
-    <p>
-      Your data is stored using <a href="https://supabase.com" target="_blank" rel="noreferrer">Supabase</a>,
-      a hosted database and file storage provider. Structured data (houses, rooms,
-      contractors, reminders) lives in a Postgres database; photos and documents
-      live in Supabase's file storage. All traffic between the app and this
-      storage is encrypted in transit (HTTPS/TLS).
-    </p>
-    <p>
-      Every row and file is scoped to your account by database-level access
-      rules &mdash; your data is not visible to other users of the app.
-    </p>
-  </section>
-
-  <section id="sharing">
-    <h2><span class="num">4</span> Sharing with others</h2>
-    <p>
-      We don't sell your personal information, and we don't share it with
-      advertisers. The only outside party involved is Supabase, acting solely
-      as our hosting and storage provider &mdash; it doesn't use your data for
-      its own purposes.
-    </p>
-  </section>
-
-  <section id="choices">
-    <h2><span class="num">5</span> Your choices &amp; deletion</h2>
-    <p>You're in control of your data at every level, directly in the app:</p>
-    <ul>
-      <li><strong>Export</strong> &mdash; from Settings, export a full record of any house, or a transfer file to hand off to a new owner, at any time.</li>
-      <li><strong>Delete a house</strong> &mdash; permanently removes that house and everything logged under it, including uploaded files.</li>
-      <li><strong>Delete your account</strong> &mdash; permanently deletes your account and every house you've created, with no need to contact anyone. This takes effect immediately and cannot be undone.</li>
-    </ul>
-  </section>
-
-  <section id="retention">
-    <h2><span class="num">6</span> Retention</h2>
-    <p>
-      We keep your information for as long as your account exists. Deleting a
-      house, or your account, removes the associated data immediately &mdash;
-      including uploaded photos and documents &mdash; rather than placing it
-      in a pending queue.
-    </p>
-  </section>
-
-  <section id="security">
-    <h2><span class="num">7</span> Security</h2>
-    <p>
-      Connections between the app and our storage provider are encrypted in
-      transit. Access to your data is enforced at the database level, so a
-      request can only ever read or change data belonging to the signed-in
-      account making it.
-    </p>
-  </section>
-
-  <section id="children">
-    <h2><span class="num">8</span> Children's privacy</h2>
-    <p>
-      HouseLedger is intended for homeowners and builders, and is not
-      directed at children. We do not knowingly collect information from
-      anyone under 13.
-    </p>
-  </section>
-
-  <section id="changes">
-    <h2><span class="num">9</span> Changes to this policy</h2>
-    <p>
-      If this policy changes, we'll update the effective date at the top of
-      this page. Continued use of the app after a change means you accept
-      the updated policy.
-    </p>
+  <section id="about">
+    <div class="entry-label">Entry no. 1</div>
+    <h2>About</h2>
+    <div class="about-text">
+      <p>CaliHub is a small, independent app studio. We build focused tools for practical, everyday problems — starting with the kind of thing you'd otherwise track on a whiteboard, a spreadsheet, or a shared notebook.</p>
+      <p>Our first app, <strong>HouseLedger</strong>, is currently in development for Google Play. We'll post details here as it gets closer to release.</p>
+    </div>
   </section>
 
   <section id="contact">
-    <h2><span class="num">10</span> Contact</h2>
-    <p>
-      Questions about this policy or your data can be sent to
-      <a href="mailto:heydiddlemarket@gmail.com">heydiddlemarket@gmail.com</a>.
-    </p>
+    <div class="entry-label">Get in touch</div>
+    <h2>Contact</h2>
+    <p>Questions about an app, a bug to report, or a partnership to discuss — reach us anytime at <a class="mono" href="mailto:support@calihub.org" style="color:var(--margin-red); text-decoration:none;">support@calihub.org</a>.</p>
   </section>
 
   <footer>
-    <span>HouseLedger</span>
-    <a href="#collect">Back to top ↑</a>
+    <span>© 2026 CaliHub. All rights reserved.</span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
   </footer>
+
 </div>
 </body>
 </html>
