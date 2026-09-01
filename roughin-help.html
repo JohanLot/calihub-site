@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rough-In Help Guide — CaliHub</title>
+<meta name="description" content="How to use Rough-In — rooms, reminders, documents, contractors, export, and Pro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F8EF;
+    --rule:#C6D8BC;
+    --rule-soft:#DCE8D3;
+    --ink:#1E2A22;
+    --ink-soft:#4B5A4E;
+    --margin-red:#9B3B3B;
+    --margin-red-soft:#C48A8A;
+    --brass:#8A6C33;
+  }
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image: repeating-linear-gradient(
+      to bottom, transparent 0px, transparent 34px, var(--rule-soft) 34px, var(--rule-soft) 35px
+    );
+    color:var(--ink);
+    font-family:"Newsreader", Georgia, serif;
+    font-size:18px;
+    line-height:35px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{ font-family:"IBM Plex Mono", monospace; letter-spacing:0.02em; }
+
+  .sheet{
+    max-width:780px;
+    margin:0 auto;
+    position:relative;
+    padding:0 28px 70px 84px;
+  }
+  .margin-rule{
+    position:absolute; top:0; bottom:0; left:56px; width:1px;
+    background:var(--margin-red-soft);
+  }
+
+  header{ padding-top:56px; }
+  .ledger-no{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--brass);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  nav{
+    display:flex;
+    gap:24px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-top:18px;
+    padding-bottom:20px;
+    flex-wrap:wrap;
+  }
+  nav a{ color:var(--ink-soft); text-decoration:none; border-bottom:1px solid transparent; }
+  nav a.current{ color:var(--margin-red); border-bottom-color:var(--margin-red); }
+  nav a:hover, nav a:focus-visible{ color:var(--margin-red); border-bottom:1px solid var(--margin-red); }
+
+  h1{ font-size:42px; font-weight:600; margin:16px 0 6px 0; letter-spacing:-0.01em; }
+  .lede{ font-size:20px; max-width:620px; margin-top:16px; color:var(--ink); }
+
+  .app-links{
+    margin:26px 0 0 0;
+    border:1px solid var(--rule);
+    background:rgba(255,255,255,0.4);
+    padding:18px 20px;
+  }
+  .app-links p.label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 12px 0;
+  }
+  .app-links ol{
+    margin:0;
+    padding:0;
+    list-style:none;
+    columns:2;
+    column-gap:28px;
+  }
+  .app-links li{ break-inside:avoid; margin-bottom:8px; font-size:16px; line-height:1.4; }
+  .app-links a{ color:var(--margin-red); text-decoration:none; }
+  .app-links a:hover{ text-decoration:underline; }
+
+  section.topic{ padding:32px 0 6px 0; scroll-margin-top:16px; }
+  .entry-label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:6px;
+  }
+  h2{ font-size:23px; font-weight:600; margin:0 0 10px 0; }
+  p{ margin:0 0 16px 0; max-width:620px; }
+  ul, ol.steps{ margin:0 0 16px 0; padding-left:22px; max-width:620px; }
+  li{ margin-bottom:10px; }
+  li::marker{ color:var(--margin-red); }
+  strong{ font-weight:600; }
+  a{ color:var(--margin-red); }
+
+  .placeholder-note{
+    background:rgba(138,108,51,0.08);
+    border-left:3px solid var(--brass);
+    padding:14px 18px;
+    max-width:600px;
+    font-size:16px;
+    line-height:28px;
+    color:var(--ink-soft);
+  }
+  .placeholder-note p{ margin:0; }
+
+  .mock{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:420px;
+    margin:6px 0 22px 0;
+  }
+  .mock-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#FFFFFF;
+    border:1px solid #E4DDCF;
+    border-radius:14px;
+    padding:12px 14px;
+    font-family:"Source Sans Pro", -apple-system, sans-serif;
+    line-height:1.3;
+  }
+  .mock-row .icon{
+    width:32px; height:32px; border-radius:999px; flex:none;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mock-row .icon svg{ width:15px; height:15px; }
+  .mock-row .text{ flex:1; min-width:0; }
+  .mock-row .title{ font-weight:600; font-size:15px; color:#26221B; }
+  .mock-row .sub{ font-size:13px; color:#8A8172; margin-top:1px; }
+  .mock-row .pill{
+    flex:none; font-family:"IBM Plex Mono", monospace; font-size:11px; font-weight:600;
+    padding:5px 10px; border-radius:999px;
+  }
+
+  .kbd{
+    display:inline-block;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:14px;
+    background:rgba(255,255,255,0.6);
+    border:1px solid var(--rule);
+    border-radius:5px;
+    padding:1px 7px;
+  }
+
+  footer{
+    margin-top:50px;
+    padding:28px 0 20px 0;
+    border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  footer a{ color:var(--margin-red); text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:640px){
+    .sheet{ padding:0 20px 60px 52px; }
+    .margin-rule{ left:32px; }
+    h1{ font-size:32px; }
+    nav{ gap:16px; }
+    .app-links ol{ columns:1; }
+  }
+</style>
+</head>
+<body>
+<div class="margin-rule" aria-hidden="true"></div>
+<div class="sheet">
+
+  <header>
+    <div class="ledger-no">CaliHub — Development Ledger</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="roughin.html">Rough-In</a>
+      <a href="caregiver.html">CareGiver</a>
+      <a href="privacy.html">Company Privacy</a>
+      <a href="mailto:support@calihub.org">Contact</a>
+    </nav>
+    <h1>Rough-In Help Guide</h1>
+    <p class="lede">A permanent, room-by-room record of your house — photos, documents, contractors, and maintenance, all in one place. Here's how everything works.</p>
+
+    <div class="app-links">
+      <p class="label">Jump to a topic</p>
+      <ol>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#rooms">Rooms &amp; systems</a></li>
+        <li><a href="#entries">Logging photos &amp; notes</a></li>
+        <li><a href="#reminders">Maintenance reminders</a></li>
+        <li><a href="#documents">Document vault</a></li>
+        <li><a href="#contractors">Contractors</a></li>
+        <li><a href="#houses">Multiple houses</a></li>
+        <li><a href="#export">Export &amp; transfer</a></li>
+        <li><a href="#pro">Rough-In Pro</a></li>
+        <li><a href="#account">Settings &amp; account</a></li>
+      </ol>
+    </div>
+  </header>
+
+  <section class="topic" id="getting-started">
+    <div class="entry-label">Start here</div>
+    <h2>Getting started</h2>
+    <p>When you first open Rough-In and sign up, you'll be asked to set up your house — this becomes the container for every room, system, and record you track from then on.</p>
+    <ol class="steps">
+      <li>Enter a house name (e.g. "123 Main St") and, optionally, its address.</li>
+      <li>Tap <strong>Create House</strong>.</li>
+      <li>You're dropped straight into an empty house, ready for its first room or system.</li>
+    </ol>
+    <div class="placeholder-note">
+      <p>Already have a Rough-In record for this house — say, you just bought it? Tap "Bought a house with an existing record? Import it" instead of creating a new one. See <a href="#export">Export &amp; transfer</a>.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="rooms">
+    <div class="entry-label">The permanent record</div>
+    <h2>Rooms &amp; systems</h2>
+    <p>Rooms (Kitchen, Bedroom, Garage) and systems (HVAC, Electrical Panel, Roof) are the permanent containers your history lives in. Unlike a project tracker, they never "close" — a kitchen renovated in 2024 and re-plumbed in 2026 shows both, in order, in one continuous record.</p>
+    <div class="mock">
+      <div class="mock-row">
+        <div class="icon" style="background:#DCEAE6;"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11L12 4L20 11" stroke="#1F6F63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10V19a1 1 0 001 1h10a1 1 0 001-1V10" stroke="#1F6F63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="text"><div class="title">Kitchen</div><div class="sub">room</div></div>
+      </div>
+      <div class="mock-row">
+        <div class="icon" style="background:#F3E1D4;"><svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="4" stroke="#C1622D" stroke-width="2.2"/><rect x="10" y="10" width="12" height="5" rx="2.4" transform="rotate(45 10 10)" fill="#C1622D"/></svg></div>
+        <div class="text"><div class="title">HVAC</div><div class="sub">system</div></div>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>On the Home tab, tap the <strong>+</strong> button.</li>
+      <li>Choose <strong>Room</strong> or <strong>System</strong>, then tap a preset (Kitchen, Bathroom, HVAC, Roof, and more) — or type a custom name.</li>
+      <li>Tap a preset again for a second one of the same kind (e.g. a second "Kids Bedroom") — Rough-In numbers it automatically.</li>
+      <li><strong>Long-press</strong> a room or system on the Home tab to delete it (and everything logged under it).</li>
+    </ol>
+  </section>
+
+  <section class="topic" id="entries">
+    <div class="entry-label">The core habit</div>
+    <h2>Logging photos &amp; notes</h2>
+    <p>This is the habit Rough-In is built around: documenting wiring, plumbing, and structure <strong>before</strong> it's covered by drywall or flooring — so you always know what's behind the wall.</p>
+    <ol class="steps">
+      <li>Open a room or system, then tap the <strong>+</strong> button.</li>
+      <li><strong>Take Photo</strong> or <strong>Choose Photo</strong> from your library — or skip the photo and just add a note.</li>
+      <li>Add a one-line note (e.g. "Sink shutoff valve, behind drywall before tile").</li>
+      <li>Tap <strong>Save Entry</strong> — logging one should take about 10 seconds.</li>
+    </ol>
+    <p>Tap any entry with a photo to view it full-screen. Long-press an entry to <strong>move it to another room/system</strong> or <strong>delete it</strong>.</p>
+  </section>
+
+  <section class="topic" id="reminders">
+    <div class="entry-label">Not a to-do list</div>
+    <h2>Maintenance reminders</h2>
+    <p>Reminders are scoped to the system they belong to. An HVAC filter reminder lives on the HVAC system; a gutter-cleaning reminder lives on the Roof.</p>
+    <div class="mock">
+      <div class="mock-row">
+        <div class="text"><div class="title">Replace HVAC filter</div><div class="sub">HVAC · Due 11/22/26</div></div>
+        <div class="pill" style="background:#1F6F63; color:#FFFFFF;">Mark done</div>
+      </div>
+      <div class="mock-row">
+        <div class="text"><div class="title">Gutter cleaning</div><div class="sub">Roof · Due 2/15/27</div></div>
+        <div class="pill" style="background:#E4DDCF; color:#8A8172;">Completed</div>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>Open a room or system, tap the bell icon, and fill in a title, how often it repeats (e.g. "3 months", "1 year"), and the next due date — typed as <strong>MM/DD/YY</strong> (just type digits, the slashes are added for you).</li>
+      <li>On the <strong>Reminders</strong> tab, tap <strong>Mark done</strong> when you've done the work — it advances the due date by the repeat interval, starting from today.</li>
+      <li>Already marked done today? The button shows <strong>Completed</strong> and greys out until tomorrow, so you can't accidentally mark it done twice.</li>
+      <li>Tap a reminder's title/date (not the button) to edit it or delete it.</li>
+    </ol>
+  </section>
+
+  <section class="topic" id="documents">
+    <div class="entry-label">Not a generic files folder</div>
+    <h2>Document vault</h2>
+    <p>Permits, warranties, manuals, and contractor invoices — attached to the room or system they actually belong to.</p>
+    <ol class="steps">
+      <li>On the <strong>Documents</strong> tab, tap <strong>+</strong>.</li>
+      <li>Choose a file, then attach it to a specific room/system — or to the <strong>whole house</strong>, for things like a deed or an insurance policy.</li>
+      <li>Tap a document to open it. Long-press to <strong>move</strong> or <strong>delete</strong> it.</li>
+    </ol>
+  </section>
+
+  <section class="topic" id="contractors">
+    <div class="entry-label">Who to call again</div>
+    <h2>Contractors</h2>
+    <p>Keep a simple log of who did the work — useful for warranty claims, or for remembering who to call again.</p>
+    <ol class="steps">
+      <li>On the <strong>Contractors</strong> tab, tap <strong>+</strong> and add a name, specialty, phone, and email.</li>
+      <li>Tap any contractor to edit their details, or delete them.</li>
+    </ol>
+  </section>
+
+  <section class="topic" id="houses">
+    <div class="entry-label">Building more than one?</div>
+    <h2>Multiple houses</h2>
+    <p>Building or maintaining more than one property at a time? Each house keeps its own completely separate record.</p>
+    <ol class="steps">
+      <li>Tap the house name pill at the top of the Home tab to switch between houses, or add another.</li>
+      <li>Your first house is always free. Adding a 2nd (or importing one) needs <a href="#pro">Rough-In Pro</a>.</li>
+    </ol>
+  </section>
+
+  <section class="topic" id="export">
+    <div class="entry-label">Selling, or handing it off</div>
+    <h2>Export &amp; transfer</h2>
+    <p>From <strong>Settings</strong>, there are two different exports — pick the one that matches what you need:</p>
+    <ul>
+      <li><strong>Export House Record</strong> — a clean, readable PDF of the house's full history. Hand it over at resale, for an insurance claim, or a home inspection.</li>
+      <li><strong>Export for Transfer</strong> — a data file that a new owner can <strong>import</strong> directly into their own Rough-In account, bringing every room, photo, document, and reminder with it. Use this when you're selling the house.</li>
+    </ul>
+    <div class="placeholder-note">
+      <p>On the receiving end: the new owner installs Rough-In, then taps "Bought a house with an existing record? Import it" and selects the transfer file.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="pro">
+    <div class="entry-label">One-time purchase</div>
+    <h2>Rough-In Pro</h2>
+    <p>A <strong>one-time purchase</strong>, not a subscription. It unlocks:</p>
+    <ul>
+      <li><strong>Unlimited houses</strong> — track as many properties as you're building or maintaining.</li>
+      <li><strong>Export</strong> — both the PDF record and the transfer file.</li>
+    </ul>
+    <p>Bought it already on another device, or reinstalled the app? On the Pro screen, tap <strong>Restore Purchases</strong> — since Pro is tied to your account, it's usually already unlocked automatically the moment you sign back in.</p>
+  </section>
+
+  <section class="topic" id="account">
+    <div class="entry-label">Housekeeping</div>
+    <h2>Settings &amp; account</h2>
+    <ul>
+      <li><strong>Edit a house</strong> — tap <span class="kbd">Edit</span> next to the house name in Settings to rename it or change its address.</li>
+      <li><strong>Delete a house</strong> — Settings → Danger zone → Delete House. This is permanent and removes every room, photo, and document under it. You'll need to type your email to confirm.</li>
+      <li><strong>Delete your account</strong> — Settings → Delete My Account. Permanently removes your account and every house you own. Also requires typing your email to confirm.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <a href="roughin.html">&larr; Back to Rough-In</a>
+    <a href="mailto:support@calihub.org">Contact</a>
+  </footer>
+
+</div>
+</body>
+</html>
